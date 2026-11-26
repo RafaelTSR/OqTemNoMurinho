@@ -232,7 +232,7 @@ body {
 }
 
 /* celular */
-@media (max-width: 700px) {
+@media (max-width: 900px) {
     .sidebar {
         top: auto;
         bottom: 0;

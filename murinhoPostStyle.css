@@ -364,6 +364,92 @@ mark {
     object-fit: cover;
 }
 
+/* Reserva espaço para a barra lateral e amplia o post em telas grandes. */
+.tela-post {
+    padding-inline-start: 110px;
+}
+
+.tela-post .conteudo {
+    width: min(100%, 1680px);
+    max-width: none;
+    margin-inline: auto;
+    padding: clamp(24px, 3vw, 52px) clamp(20px, 4vw, 64px) 56px;
+}
+
+.tela-post .msg__inicial {
+    font-size: clamp(1.5rem, 2.4vw, 2.625rem);
+}
+
+.tela-post .busca__campo {
+    min-width: 0;
+    font-size: clamp(1rem, 1.05vw, 1.125rem);
+}
+
+/* O banner, o nome e o preço crescem juntos até o limite definido. */
+.tela-post .post-principal {
+    min-height: clamp(270px, 29vw, 460px);
+    margin-top: clamp(20px, 2.5vw, 40px);
+    padding: clamp(18px, 2.4vw, 40px);
+    background-color: #481827;
+}
+
+.tela-post .post-principal__vendedor {
+    min-width: 0;
+    flex: 1 1 220px;
+}
+
+.tela-post .post-principal__avatar {
+    width: clamp(40px, 4vw, 68px);
+    height: auto;
+    aspect-ratio: 1;
+    flex-shrink: 0;
+}
+
+.tela-post .post-principal__nome {
+    font-size: clamp(1.5rem, 2.7vw, 3.25rem);
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+}
+
+.tela-post .post-principal__preco {
+    margin-inline-start: auto;
+}
+
+.tela-post .preco {
+    font-size: clamp(1.375rem, 2.4vw, 2.75rem);
+}
+
+.tela-post .descricao {
+    margin-top: clamp(16px, 2vw, 32px);
+    padding-block: clamp(16px, 2vw, 28px);
+}
+
+.tela-post .descricao__titulo {
+    font-size: clamp(1.125rem, 1.5vw, 1.625rem);
+}
+
+.tela-post .descricao__texto {
+    /* Limita o comprimento da linha para facilitar a leitura. */
+    max-width: 72ch;
+    font-size: clamp(1rem, 1.25vw, 1.375rem);
+    line-height: 1.65;
+}
+
+@media (max-width: 700px) {
+    .tela-post {
+        padding-inline-start: 0;
+    }
+
+    .tela-post .conteudo {
+        /* Deixa espaço no fim da página para a barra do celular. */
+        padding: 20px clamp(12px, 4vw, 24px) 96px;
+    }
+
+    .tela-post .post-principal {
+        min-height: 240px;
+    }
+}
+
 /* celular */
 @media (max-width: 700px) {
     .sidebar {
