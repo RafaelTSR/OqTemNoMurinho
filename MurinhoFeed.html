@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="Imagens/Design_sem_nome-removebg-preview.png">
+    <link rel="stylesheet" href="murinhoFeedStyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap&family=Pacifico" rel="stylesheet">
+    <title>Feed</title>
+  <link rel="stylesheet" href="murinhoFuncionalStyle.css">
+</head>
+<body>
+    
+    <section id="feed" class="tela tela-feed">
+
+     <nav class="sidebar">
+      <div class="sidebar__logo">
+        <img src="Imagens/O_que_tem_no_murinho_-_Identidade_Visual-removebg-preview.png" alt="Logo" class="sidebar__logo-img">
+      </div>
+
+      <ul class="sidebar__menu">
+        <li><a href="MurinhoFeed.html" class="sidebar__link" title="Início">
+            <img src="Imagens/casa.png" alt="Início" class="sidebar__icone">
+             <span class="sidebar__texto">Início</span>
+        </a></li>
+        
+        <li><a href="MurinhoFeed.html" class="sidebar__link" title="Explorar">
+            <img src="Imagens/cupcake.png" alt="Explorar" class="sidebar__icone">
+             <span class="sidebar__texto">Explorar</span>
+        </a></li>
+
+        <li><a href="MurinhoCriarPost.html" class="sidebar__link" title="Criar Post">
+            <img src="Imagens/adicionar.png" alt="Criar post" class="sidebar__icone">
+             <span class="sidebar__texto">Criar post</span>
+        </a></li>
+      </ul>
+      <ul class="sidebar__rodape">
+         <li><a href="#ilustrativo" class="sidebar__link" title="Configurações">
+            <img src="Imagens/configuracoes.png" alt="Configurações" class="sidebar__icone">
+        </a></li>
+         <li><button type="button" class="sidebar__link sidebar__sair" data-sair hidden title="Sair" aria-label="Sair">
+            <img src="Imagens/saida-de-emergencia.png" alt="" class="sidebar__icone">
+        </button></li>
+      </ul>
+    </nav>
+
+    <main class="conteudo">
+      <header class="topo">
+        <h2 class="msg__inicial">OLÁ, MACIE!</h2>
+        <form class="busca">
+          <button type="submit" class="busca__botao">
+            <img src="Imagens/lupa.png" alt="" class="busca__icone">
+          </button>
+          <input type="search" class="busca__campo" placeholder="Procure por...">
+        </form>
+      </header>
+
+      <section class="produto-do-dia">
+        <img src="Imagens/baixados.jpg" alt="Cookie da Bibi" class="produto-do-dia__imagem">
+        <div class="produto-do-dia__texto">
+          <h3 class="produto-do-dia__titulo">Produto do dia!</h3>
+          <p class="produto-do-dia__nome">Macie´s Sweetness ⋆˙⟡</p>
+        </div>
+      </section>
+
+      <section class="categorias">
+        <h4 class="secao__titulo">Categorias Populares</h4>
+        <ul class="categorias__lista">
+          <li><button class="categoria">Doces</button></li>
+          <li><button class="categoria">Salgados</button></li>
+          <li><button class="categoria">Variedades</button></li>
+          <li><button class="categoria">Promoções</button></li>
+          <li><button class="categoria">Novidades</button></li>
+        </ul>
+      </section>
+
+      <section class="destaques" aria-labelledby="titulo-destaques">
+        <div class="destaques__cabecalho">
+          <h4 class="secao__titulo" id="titulo-destaques">Destaques</h4>
+          <div id="controles-destaques" class="destaques__controles" hidden>
+            <button type="button" id="destaque-anterior" aria-controls="lista-destaques" aria-label="Destaque anterior" disabled>‹</button>
+            <button type="button" id="destaque-proximo" aria-controls="lista-destaques" aria-label="Próximo destaque" disabled>›</button>
+          </div>
+        </div>
+        <p id="mensagem-feed" class="mensagem-murinho" role="status">Carregando produtos…</p>
+        <div id="lista-destaques" class="destaques__lista" aria-label="Produtos recentes"></div>
+
+        <!-- O JavaScript copia este modelo uma vez para cada produto publicado. -->
+        <template id="modelo-card">
+          <a class="card">
+            <img alt="" class="card__imagem">
+            <div class="card__info">
+              <h5 class="card__nome"></h5>
+              <p class="card__preco"></p>
+            </div>
+            <img src="Imagens/avatar1.jpg" alt="" class="card__avatar">
+          </a>
+        </template>
+      </section>
+    </main>
+  </section>
+  <script type="module" src="backend/feed.js"></script>
+</body>
+  </html>

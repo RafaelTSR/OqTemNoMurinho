@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="MurinhoStyle.css">
+    <title>O que tem no murinho?</title>
+</head>
+<body>
+  <section id="home" class="tela tela-inicial">
+    <div class="logo">?</div>
+    <p class="boas-vindas">Olá! Seja bem-vindo ao</p>
+    <h1 class="titulo">O Que Tem no Murinho?</h1>
+    <div class="botoes">
+      <button type="button" id="abrir-login" class="botao botao-entrar">ENTRAR</button>
+      <button type="button" id="abrir-cadastro" class="botao botao-cadastro">CADASTRO</button>
+      <a href="MurinhoFeed.html" class="botao">ENTRAR COMO VISITANTE</a>
+    </div>
+  </section>
+
+  <!-- Login e cadastro usam o mesmo formulário e a mesma tela inicial. -->
+  <dialog id="janela-conta" aria-labelledby="titulo-conta">
+    <h2 id="titulo-conta">Entrar na sua conta</h2>
+    <form id="form-conta">
+      <label for="email-conta">E-mail</label>
+      <input id="email-conta" name="email" type="email" autocomplete="email" required>
+      <label for="senha-conta">Senha</label>
+      <input id="senha-conta" name="senha" type="password" autocomplete="current-password" required>
+      <p id="mensagem-conta" role="status"></p>
+      <div class="conta__botoes">
+        <button type="submit" id="confirmar-conta">Entrar</button>
+        <button type="button" id="fechar-conta">Cancelar</button>
+      </div>
+    </form>
+  </dialog>
+  <script type="module" src="backend/inicio.js"></script>
+</body>
+</html>

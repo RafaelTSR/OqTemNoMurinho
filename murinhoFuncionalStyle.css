@@ -1,0 +1,120 @@
+/* Os estilos das telas continuam responsáveis pelo layout principal. */
+/* Os módulos liberam os elementos assim que a sessão ou a consulta termina. */
+[hidden] {
+    display: none !important;
+}
+
+.sidebar__sair {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+.mensagem-murinho {
+    color: #780e24;
+    font-size: 0.9rem;
+    overflow-wrap: anywhere;
+}
+
+.mensagem-murinho:empty {
+    display: none;
+}
+
+.destaques__cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.destaques__controles {
+    display: flex;
+    gap: 6px;
+}
+
+.destaques__cabecalho .secao__titulo {
+    margin: 0;
+}
+
+.destaques__cabecalho {
+    margin: clamp(20px, 2vw, 36px) 0 12px;
+    min-height: 42px;
+}
+
+.destaques__controles button {
+    width: 42px;
+    height: 42px;
+    border: 1px solid #780e24;
+    border-radius: 50%;
+    background: #fff;
+    color: #780e24;
+    font-size: 1.35rem;
+    cursor: pointer;
+}
+
+.destaques__controles button:disabled,
+.botao-postar:disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
+/* Mantém os cards na mesma linha e permite arrastar no celular. */
+#lista-destaques {
+    display: grid;
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    /* Três cards por vez. Os seguintes continuam na mesma faixa horizontal. */
+    --colunas-visiveis: 3;
+    --espacamento-cards: clamp(12px, 1.5vw, 24px);
+    gap: var(--espacamento-cards);
+    padding-bottom: 10px;
+    grid-auto-columns: calc((100% - (var(--colunas-visiveis) - 1) * var(--espacamento-cards)) / var(--colunas-visiveis));
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+}
+
+#lista-destaques .card {
+    height: clamp(215px, 21vw, 365px);
+    scroll-snap-align: start;
+}
+
+#lista-destaques .card:focus-visible {
+    outline: 3px solid #780e24;
+    outline-offset: -3px;
+}
+
+#campos-publicacao {
+    border: 0;
+    padding: 0;
+    min-inline-size: 0;
+}
+
+#nome-arquivo {
+    overflow-wrap: anywhere;
+}
+
+.descricao__texto {
+    white-space: pre-line;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 700px) {
+    #lista-destaques {
+        --colunas-visiveis: 2;
+    }
+
+    #lista-destaques .card {
+        height: clamp(160px, 48vw, 245px);
+    }
+}
+
+/* Os textos dos cards acompanham a escala do carrossel. */
+#lista-destaques .card__nome {
+    font-size: clamp(14px, 1.35vw, 22px);
+    overflow-wrap: anywhere;
+}
+
+#lista-destaques .card__preco {
+    font-size: clamp(12px, 1vw, 16px);
+}
+

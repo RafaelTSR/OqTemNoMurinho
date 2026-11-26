@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="Imagens/Design_sem_nome-removebg-preview.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="murinhoCriarPostStyle.css">
+    <title>Criar post</title>
+  <link rel="stylesheet" href="murinhoFuncionalStyle.css">
+</head>
+<body>
+
+  <section id="criar" class="tela tela-criar">
+
+    <nav class="sidebar">
+      <div class="sidebar__logo">
+        <img src="Imagens/O_que_tem_no_murinho_-_Identidade_Visual-removebg-preview.png" alt="Logo" class="sidebar__logo-img">
+      </div>
+
+      <ul class="sidebar__menu">
+        <li><a href="MurinhoFeed.html" class="sidebar__link" title="Início">
+            <img src="Imagens/casa.png" alt="Início" class="sidebar__icone">
+             <span class="sidebar__texto">Início</span>
+        </a></li>
+        
+        <li><a href="MurinhoFeed.html" class="sidebar__link" title="Explorar">
+            <img src="Imagens/cupcake.png" alt="Explorar" class="sidebar__icone">
+             <span class="sidebar__texto">Explorar</span>
+        </a></li>
+
+        <li><a href="MurinhoCriarPost.html" class="sidebar__link" title="Criar Post">
+            <img src="Imagens/adicionar.png" alt="Criar post" class="sidebar__icone">
+             <span class="sidebar__texto">Criar post</span>
+        </a></li>
+      </ul>
+      <ul class="sidebar__rodape">
+         <li><a href="#ilustrativo" class="sidebar__link" title="Configurações">
+            <img src="Imagens/configuracoes.png" alt="Configurações" class="sidebar__icone">
+        </a></li>
+         <li><button type="button" class="sidebar__link sidebar__sair" data-sair hidden title="Sair" aria-label="Sair">
+            <img src="Imagens/saida-de-emergencia.png" alt="" class="sidebar__icone">
+        </button></li>
+      </ul>
+    </nav>
+
+    <main class="conteudo">
+      <h2 class="pagina__titulo">Postagem</h2>
+
+            <p id="aviso-login" class="mensagem-murinho" hidden>
+        Para publicar, <a href="Murinho.html?destino=publicar">entre na sua conta</a>.
+      </p>
+      <p id="mensagem-publicacao" class="mensagem-murinho" role="status">Verificando sessão…</p>
+
+      <!-- Os nomes dos campos são usados por formulario.elements no JavaScript. -->
+      <form id="form-post">
+        <fieldset id="campos-publicacao" class="form-post" disabled aria-label="Dados do produto">
+          <label class="upload" title="Foto opcional: JPG, PNG ou WebP">
+            <span class="upload__icone">
+              <span id="nome-arquivo">Adicionar foto</span>
+              <img src="Imagens/upload-de-arquivo.png" alt="">
+            </span>
+            <input type="file" name="foto" accept="image/jpeg,image/png,image/webp"
+                   aria-label="Adicionar foto opcional" class="upload__input">
+          </label>
+
+          <div class="form-post__campos">
+            <input type="text" name="nome" class="campo" placeholder="Nome do produto"
+                   aria-label="Nome do produto" maxlength="100" required>
+            <input type="text" name="preco" class="campo" placeholder="Preço (ex.: 8,50)"
+                   aria-label="Preço" inputmode="decimal" maxlength="12" required>
+            <textarea name="descricao" class="campo campo-texto" maxlength="1000"
+                      placeholder="Informações adicionais" aria-label="Informações adicionais"></textarea>
+            <button id="botao-postar" type="submit" class="botao-postar">POSTAR</button>
+          </div>
+        </fieldset>
+      </form>
+    </main>
+  </section>
+  <script type="module" src="backend/criar-post.js"></script>
+</body>
+</html>

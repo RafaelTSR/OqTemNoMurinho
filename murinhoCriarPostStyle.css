@@ -1,0 +1,353 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #3a3a3a;
+}
+
+.tela-criar {
+    min-height: 100vh;
+    background: #ffffff;
+}
+
+/*barra lateral */
+.sidebar {
+    position: fixed;
+    top: 12px;
+    bottom: 12px; 
+    left: 12px;
+    width: 90px;
+    padding: 14px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    border-radius: 14px;
+    background-color: #8b0404;
+    color: #ffffff;
+    z-index: 10;
+}
+
+.sidebar__logo {
+    width: 100%;
+    padding: 0 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.sidebar__logo-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.sidebar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar li {
+    width: 100%;
+    text-align: center;
+}
+
+.sidebar__link {
+    display: flex;
+    flex-direction: column;   
+    justify-content: center;
+    align-items: center;
+    gap: 4px;                 
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    opacity: 0.9;
+}
+
+.sidebar__texto {
+    font-size: 10px;
+    line-height: 1.2;
+}
+
+.sidebar__link:hover {
+    opacity: 1;
+}
+
+.sidebar .sidebar__menu {
+    flex: 1;                        
+    justify-content: space-evenly;  /* espaços iguais entre os ícones */
+    margin-block: 0;           
+}
+
+.sidebar .sidebar__rodape {
+    width: 70%;
+    margin-top: 0;
+    padding-top: 18px;
+    gap: 24px;                      
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.sidebar__icone {
+    width: 20px;
+    height: 20px;
+    display: block;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+/* conteúdo da pág */
+.tela-criar .conteudo {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 28px 20px 40px 126px;
+}
+
+.pagina__titulo {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+    color: #bb1818;
+}
+
+/* formulário */
+.form-post {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 40px;
+    align-items: start;
+}
+
+/* área p/ inserir foto */
+.upload {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background-color: #f7f7f7;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    overflow: hidden;
+    transition: box-shadow 0.2s ease;
+}
+
+.upload:hover {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+.upload__icone {
+    font-size: 12px;
+    font-weight: 500;
+    color: #8a8a8a;
+    text-align: center;
+}
+
+.upload__icone img {
+    width: 40px;
+    height: 40px;
+    display: block;
+    margin: 0 auto 6px;
+}
+
+/* esconde o seletor de arquivo padrão (o clique é no quadrado todo) */
+.upload__input {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* campos do formulário */
+.form-post__campos {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.campo {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    outline: 0;
+    background: #f7f7f7;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.15);
+    color: #3a3a3a;
+    font-size: 12px;
+    font-family: inherit;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.campo::placeholder {
+    color: #8a8a8a;
+}
+
+.campo:focus {
+    border-color: #bb1818;
+    box-shadow: 0 0 0 3px rgba(183, 28, 28, 0.15);
+}
+
+.campo-texto {
+    height: 100px;
+    resize: none;
+}
+
+/* botão */
+.botao-postar {
+    width: 100%;
+    padding: 12px;
+    border: 0;
+    border-radius: 8px;
+    background: #bb1818;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    font-family: inherit;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.botao-postar:hover {
+    background: #8b0404;
+}
+
+.botao-postar:active {
+    transform: scale(0.98);
+}
+
+/* celular */
+@media (max-width: 700px) {
+    .sidebar {
+        top: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 64px;
+        padding: 6px 12px;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 0;
+        border-radius: 14px 14px 0 0;
+    }
+
+    .sidebar__logo {
+        display: none;
+    }
+
+    .sidebar ul {
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 0;
+    }
+
+    .sidebar li {
+        width: auto;
+    }
+
+    .sidebar .sidebar__menu {
+        flex: 1;
+    }
+
+    .sidebar .sidebar__rodape {
+        width: auto;
+        flex: 0 0 auto;
+        gap: 14px;
+        margin-left: 8px;
+        padding: 0 0 0 12px;
+        border-top: 0;
+        border-left: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .tela-criar .conteudo {
+        padding: 20px 16px 90px;
+    }
+
+    .form-post {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        margin-top: 24px;
+    }
+
+    .upload {
+        width: 100%;
+        max-width: 360px;
+        margin: 0 auto;
+    }
+}
+
+/* tablet e notebooks pequenos */
+@media (min-width: 701px) and (max-width: 1000px) {
+    .tela-criar .conteudo {
+        padding: 24px 20px 40px 120px;
+    }
+
+    .form-post {
+        gap: 28px;
+    }
+}
+
+/* telas grandes */
+@media (min-width: 1400px) {
+    .tela-criar .conteudo {
+        max-width: 1100px;
+    }
+
+    .form-post {
+        gap: 56px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .tela-criar .conteudo {
+        max-width: 1200px;
+    }
+
+    .pagina__titulo {
+        font-size: 28px;
+    }
+
+    .form-post {
+        gap: 56px;
+        margin-top: 48px;
+    }
+
+    .campo {
+        padding: 16px 18px;
+        font-size: 14px;
+    }
+
+    .campo-texto {
+        height: 140px;
+    }
+
+    .botao-postar {
+        padding: 16px;
+        font-size: 13px;
+    }
+
+    .upload__icone {
+        font-size: 14px;
+    }
+
+    .upload__icone img {
+        width: 56px;
+        height: 56px;
+    }
+}

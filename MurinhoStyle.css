@@ -1,0 +1,171 @@
+*{
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url("O\ que\ tem\ no\ murinho\ -\ Identidade\ Visual.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.tela-inicial{
+    box-sizing: border-box;
+    /* Preenche a altura visível e centraliza o bloco em qualquer tela. */
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: clamp(20px, 5vw, 48px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: aliceblue;
+}
+
+
+.boas-vindas{
+    margin-top: 20px;
+    font-size: clamp(15px, 2vw, 18px);
+    font-weight: 400;
+}
+
+.titulo{
+    margin: 6px 0 28px;
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 700;
+    max-width: 17ch;
+}
+
+.botoes{
+    width: min(100%, 360px);
+    gap: 14px;
+    display: flex;
+    flex-direction: column;
+}
+.botao{
+    background-color: antiquewhite;
+    border-radius: 7px;
+    color: brown;
+    /* Link e botões recebem a mesma caixa, incluindo borda e padding. */
+    box-sizing: border-box;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    min-height: clamp(52px, 7vh, 64px);
+    padding: 12px 16px;
+    font-size: clamp(13px, 1.6vw, 16px);
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+
+}
+
+.logo {
+    font-size: clamp(36px, 6vw, 60px);
+    line-height: 1;
+}
+
+.sidebar{
+    position: fixed;
+    top:12px;
+    left: 12px;
+    width: 48px;
+    padding: 14px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    border-radius: 14px;
+    background-color: rgb(141, 9, 9);
+    color: #ffffff;
+    z-index: 10;
+}
+
+.sidebar__logo{
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.sidebar ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+
+}
+
+.sidebar__link{
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 9px;
+    opacity: 0.9;
+}
+
+.sidebar__link :hover{
+    opacity: 1;
+}
+/* A janela usa os mesmos tons da tela inicial. */
+.botoes button {
+    border: 0;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+#janela-conta {
+    width: min(92%, 440px);
+    margin: auto;
+    max-height: calc(100% - 32px);
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 12px;
+    padding: 24px;
+    color: #6f1727;
+    background: #fff9f2;
+    text-align: left;
+}
+
+#janela-conta::backdrop {
+    background: #250606a8;
+}
+
+#form-conta {
+    display: grid;
+    gap: 8px;
+}
+
+#form-conta input {
+    border: 1px solid #be8f8f;
+    border-radius: 6px;
+    padding: 9px;
+    min-width: 0;
+    font: inherit;
+}
+
+#mensagem-conta:empty {
+    display: none;
+}
+
+.conta__botoes {
+    display: flex;
+    gap: 8px;
+}
+
+.conta__botoes button {
+    border: 1px solid #89253b;
+    border-radius: 6px;
+    background: #89253b;
+    color: #fff;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.conta__botoes button[type="button"] {
+    background: transparent;
+    color: #6f1727;
+}
